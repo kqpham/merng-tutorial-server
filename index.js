@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
-const { MONGODB } = require(process.env);
+const { MONGODB } = process.env.MONGODB || require('./config.js');
 
 const pubsub = new PubSub ();
 const PORT = process.env.PORT || 5000;
